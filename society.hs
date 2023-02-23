@@ -21,8 +21,14 @@ variance xs = foldr (:+:) 0 xs / fromIntegral (length xs)
 standdev :: Floating a => [a] -> a
 standdev xs = sqrt $ variance xs
 
+div3 :: Int -> Maybe Float
+div3 n
+  | (n == 0) = Nothing
+  | otherwise = Just(3 / (fromIntegral n))
+
 main = do
   print $ factorial 8
   print $ fibonacci 9
   print $ mean dataset
   print $ standdev dataset
+  primt $ div3 5
